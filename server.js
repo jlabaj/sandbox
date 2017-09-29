@@ -29,9 +29,9 @@ app.use('/styles', express.static(__dirname + '/views/css/'));
 
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-app.listen(server_port, server_ip_address, function () {
+app.listen(port, ipaddress, function () {
     
-        console.log( "Listening on " + server_ip_address + ", server_port " + server_port  );
+        console.log( "Listening on " + ipaddress + ", server_port " + port  );
     
     });
 
