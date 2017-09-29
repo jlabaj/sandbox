@@ -27,8 +27,12 @@ app.use('/styles', express.static(__dirname + '/views/css/'));
 
 //app.use('/css',express.static(path.join(__dirname, 'public/stylesheets')));
 
-var ipaddress = process.env.OPENSHIFT_NODEJS_IP;
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-var server = app.listen(port, ipaddress);
+app.listen(server_port, server_ip_address, function () {
+    
+        console.log( "Listening on " + server_ip_address + ", server_port " + server_port  );
+    
+    });
 
 // app.listen(8000,"127.0.0.1");
